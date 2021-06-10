@@ -1,16 +1,18 @@
+// classe que envolve todo o header
 .headerContainer {
     height: 5rem;
     border-bottom: 1px solid var(--gray-800);
 }
 
+// classe interna  - div que vai ficar centralizada
 .headerContent {
     max-width: 1120px;
     height: 5rem;
-    margin: 0 auto;
-    padding: 0 2rem;
+    margin: 0 auto; // alinhar ao centro horizontalmente
+    padding: 0 2rem; // se a tela for reduzida a menos que 1120, fica um espaçamento
 
     display: flex;
-    align-items: center;
+    align-items: center; // ficar verticalmente alinhado ao centro
 
     nav {
         margin-left: 5rem;
@@ -34,7 +36,7 @@
                 color: var(--white);
             }
 
-            &:active {
+            &.active {
                 color: var(--white);
                 font-weight: bold;
             }
@@ -53,6 +55,6 @@
     }
 
     button {
-        margin-left: auto;
+        margin-left: auto; // alinhamento do botão a direita o máximo possível
     }
 }
