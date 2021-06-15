@@ -1,61 +1,359 @@
-StripeInvalidRequestError: Missing required param: cancel_url.
-    at Function.generate (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/stripe/lib/Error.js:40:16)
-    at IncomingMessage.<anonymous> (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/stripe/lib/StripeResource.js:180:33)
-    at Object.onceWrapper (events.js:421:28)
-    at IncomingMessage.emit (events.js:327:22)
-    at endReadableNT (internal/streams/readable.js:1327:12)
-    at processTicksAndRejections (internal/process/task_queues.js:80:21) {
-  type: 'StripeInvalidRequestError',
-  raw: {
-    code: 'parameter_missing',
-    doc_url: 'https://stripe.com/docs/error-codes/parameter-missing',
-    message: 'Missing required param: cancel_url.',
-    param: 'cancel_url',
-    type: 'invalid_request_error',
-    headers: {
-      server: 'nginx',
-      date: 'Thu, 10 Jun 2021 14:25:48 GMT',
-      'content-type': 'application/json',
-      'content-length': '243',
-      connection: 'keep-alive',
-      'access-control-allow-credentials': 'true',
-      'access-control-allow-methods': 'GET, POST, HEAD, OPTIONS, DELETE',
-      'access-control-allow-origin': '*',
-      'access-control-expose-headers': 'Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required',
-      'access-control-max-age': '300',
-      'cache-control': 'no-cache, no-store',
-      'request-id': 'req_lWV2wysBKrcpCt',
-      'stripe-version': '2020-08-27',
-      'x-stripe-c-cost': '0',
-      'strict-transport-security': 'max-age=31556926; includeSubDomains; preload'
-    },
-    statusCode: 400,
-    requestId: 'req_lWV2wysBKrcpCt'
+     "currency": "usd",\n' +
+        '            "description": "1 × Subscription (at $9.90 / month)",\n' +
+        '            "discount_amounts": [\n' +
+        '\n' +
+        '            ],\n' +
+        '            "discountable": true,\n' +
+        '            "discounts": [\n' +
+        '\n' +
+        '            ],\n' +
+        '            "livemode": false,\n' +
+        '            "metadata": {\n' +
+        '            },\n' +
+        '            "period": {\n' +
+        '              "end": 1626349399,\n' +
+        '              "start": 1623757399\n' +
+        '            },\n' +
+        '            "plan": {\n' +
+        '              "id": "price_1IvKlkK8IdYREZycIJ7sM6PA",\n' +
+        '              "object": "plan",\n' +
+        '              "active": true,\n' +
+        '              "aggregate_usage": null,\n' +
+        '              "amount": 990,\n' +
+        '              "amount_decimal": "990",\n' +
+        '              "billing_scheme": "per_unit",\n' +
+        '              "created": 1622027964,\n' +
+        '              "currency": "usd",\n' +
+        '              "interval": "month",\n' +
+        '              "interval_count": 1,\n' +
+        '              "livemode": false,\n' +
+        '              "metadata": {\n' +
+        '              },\n' +
+        '              "nickname": null,\n' +
+        '              "product": "prod_JYRfsjmFBiO2rP",\n' +
+        '              "tiers_mode": null,\n' +
+        '              "transform_usage": null,\n' +
+        '              "trial_period_days": null,\n' +
+        '              "usage_type": "licensed"\n' +
+        '            },\n' +
+        '            "price": {\n' +
+        '              "id": "price_1IvKlkK8IdYREZycIJ7sM6PA",\n' +
+        '              "object": "price",\n' +
+        '              "active": true,\n' +
+        '              "billing_scheme": "per_unit",\n' +
+        '              "created": 1622027964,\n' +
+        '              "currency": "usd",\n' +
+        '              "livemode": false,\n' +
+        '              "lookup_key": null,\n' +
+        '              "metadata": {\n' +
+        '              },\n' +
+        '              "nickname": null,\n' +
+        '              "product": "prod_JYRfsjmFBiO2rP",\n' +
+        '              "recurring": {\n' +
+        '                "aggregate_usage": null,\n' +
+        '                "interval": "month",\n' +
+        '                "interval_count": 1,\n' +
+        '                "trial_period_days": null,\n' +
+        '                "usage_type": "licensed"\n' +
+        '              },\n' +
+        '              "tiers_mode": null,\n' +
+        '              "transform_quantity": null,\n' +
+        '              "type": "recurring",\n' +
+        '              "unit_amount": 990,\n' +
+        '              "unit_amount_decimal": "990"\n' +
+        '            },\n' +
+        '            "proration": false,\n' +
+        '            "quantity": 1,\n' +
+        '            "subscription": "sub_JfwYeUpJjDNxG3",\n' +
+        '            "subscription_item": "si_JfwYqYQMExHtlZ",\n' +
+        '            "tax_amounts": [\n' +
+        '\n' +
+        '            ],\n' +
+        '            "tax_rates": [\n' +
+        '\n' +
+        '            ],\n' +
+        '            "type": "subscription"\n' +
+        '          }\n' +
+        '        ],\n' +
+        '        "has_more": false,\n' +
+        '        "total_count": 1,\n' +
+        '        "url": "/v1/invoices/in_1J2afrK8IdYREZycfAYIOkIq/lines"\n' +
+        '      },\n' +
+        '      "livemode": false,\n' +
+        '      "metadata": {\n' +
+        '      },\n' +
+        '      "next_payment_attempt": null,\n' +
+        '      "number": "1415EEEB-0001",\n' +
+        '      "on_behalf_of": null,\n' +
+        '      "paid": true,\n' +
+        '      "payment_intent": "pi_1J2afrK8IdYREZycJmVtKo3E",\n' +
+        '      "payment_settings": {\n' +
+        '        "payment_method_options": null,\n' +
+        '        "payment_method_types": null\n' +
+        '      },\n' +
+        '      "period_end": 1623757399,\n' +
+        '      "period_start": 1623757399,\n' +
+        '      "post_payment_credit_notes_amount": 0,\n' +
+        '      "pre_payment_credit_notes_amount": 0,\n' +
+        '      "receipt_number": null,\n' +
+        '      "starting_balance": 0,\n' +
+        '      "statement_descriptor": null,\n' +
+        '      "status": "paid",\n' +
+        '      "status_transitions": {\n' +
+        '        "finalized_at": 1623757399,\n' +
+        '        "marked_uncollectible_at": null,\n' +
+        '        "paid_at": 1623757400,\n' +
+        '        "voided_at": null\n' +
+        '      },\n' +
+        '      "subscription": "sub_JfwYeUpJjDNxG3",\n' +
+        '      "subtotal": 990,\n' +
+        '      "tax": null,\n' +
+        '      "total": 990,\n' +
+        '      "total_discount_amounts": [\n' +
+        '\n' +
+        '      ],\n' +
+        '      "total_tax_amounts": [\n' +
+        '\n' +
+        '      ],\n' +
+        '      "transfer_data": null,\n' +
+        '      "webhooks_delivered_at": null\n' +
+        '    },\n' +
+        '    "previous_attributes": {\n' +
+        '      "amount_paid": 0,\n' +
+        '      "amount_remaining": 990,\n' +
+        '      "attempt_count": 0,\n' +
+        '      "attempted": false,\n' +
+        '      "charge": null,\n' +
+        '      "paid": false,\n' +
+        '      "status": "open",\n' +
+        '      "status_transitions": {\n' +
+        '        "paid_at": null\n' +
+        '      }\n' +
+        '    }\n' +
+        '  },\n' +
+        '  "livemode": false,\n' +
+        '  "pending_webhooks": 1,\n' +
+        '  "request": {\n' +
+        '    "id": "req_vvAmpt1L6cTjuW",\n' +
+        '    "idempotency_key": null\n' +
+        '  },\n' +
+        '  "type": "invoice.updated"\n' +
+        '}'
+    }
   },
-  rawType: 'invalid_request_error',
-  code: 'parameter_missing',
-  doc_url: 'https://stripe.com/docs/error-codes/parameter-missing',
-  param: 'cancel_url',
-  detail: undefined,
-  headers: {
-    server: 'nginx',
-    date: 'Thu, 10 Jun 2021 14:25:48 GMT',
-    'content-type': 'application/json',
-    'content-length': '243',
-    connection: 'keep-alive',
-    'access-control-allow-credentials': 'true',
-    'access-control-allow-methods': 'GET, POST, HEAD, OPTIONS, DELETE',
-    'access-control-allow-origin': '*',
-    'access-control-expose-headers': 'Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required',
-    'access-control-max-age': '300',
-    'cache-control': 'no-cache, no-store',
-    'request-id': 'req_lWV2wysBKrcpCt',
-    'stripe-version': '2020-08-27',
-    'x-stripe-c-cost': '0',
-    'strict-transport-security': 'max-age=31556926; includeSubDomains; preload'
+  rawType: undefined,
+  code: undefined,
+  doc_url: undefined,
+  param: undefined,
+  detail: {
+    header: 't=1623757403,v1=73ac3c88c1eebb24964d110f957850faf26af23e46f5e5a585badf8d37f4e430,v0=2077aacf8ec1615b3f88401c577e315e208a14d02a82e37442dabc73c964ca22',
+    payload: '{\n' +
+      '  "id": "evt_1J2afuK8IdYREZycRH3hfKjN",\n' +
+      '  "object": "event",\n' +
+      '  "api_version": "2020-08-27",\n' +
+      '  "created": 1623757401,\n' +
+      '  "data": {\n' +
+      '    "object": {\n' +
+      '      "id": "in_1J2afrK8IdYREZycfAYIOkIq",\n' +
+      '      "object": "invoice",\n' +
+      '      "account_country": "BR",\n' +
+      '      "account_name": "Ignews",\n' +
+      '      "account_tax_ids": null,\n' +
+      '      "amount_due": 990,\n' +
+      '      "amount_paid": 990,\n' +
+      '      "amount_remaining": 0,\n' +
+      '      "application_fee_amount": null,\n' +
+      '      "attempt_count": 1,\n' +
+      '      "attempted": true,\n' +
+      '      "auto_advance": false,\n' +
+      '      "automatic_tax": {\n' +
+      '        "enabled": false,\n' +
+      '        "status": null\n' +
+      '      },\n' +
+      '      "billing_reason": "subscription_create",\n' +
+      '      "charge": "ch_1J2afsK8IdYREZyccFHaVdMJ",\n' +
+      '      "collection_method": "charge_automatically",\n' +
+      '      "created": 1623757399,\n' +
+      '      "currency": "usd",\n' +
+      '      "custom_fields": null,\n' +
+      '      "customer": "cus_JfwWXyhpdSpvJd",\n' +
+      '      "customer_address": null,\n' +
+      '      "customer_email": "ednachrisanto1955@gmail.com",\n' +
+      '      "customer_name": null,\n' +
+      '      "customer_phone": null,\n' +
+      '      "customer_shipping": null,\n' +
+      '      "customer_tax_exempt": "none",\n' +
+      '      "customer_tax_ids": [\n' +
+      '\n' +
+      '      ],\n' +
+      '      "default_payment_method": null,\n' +
+      '      "default_source": null,\n' +
+      '      "default_tax_rates": [\n' +
+      '\n' +
+      '      ],\n' +
+      '      "description": null,\n' +
+      '      "discount": null,\n' +
+      '      "discounts": [\n' +
+      '\n' +
+      '      ],\n' +
+      '      "due_date": null,\n' +
+      '      "ending_balance": 0,\n' +
+      '      "footer": null,\n' +
+      '      "hosted_invoice_url": "https://invoice.stripe.com/i/acct_1IvKhwK8IdYREZyc/invst_JfwYzqrbabMb5MJETTwAo60cF25g2fz",\n' +
+      '      "invoice_pdf": "https://pay.stripe.com/invoice/acct_1IvKhwK8IdYREZyc/invst_JfwYzqrbabMb5MJETTwAo60cF25g2fz/pdf",\n' +
+      '      "last_finalization_error": null,\n' +
+      '      "lines": {\n' +
+      '        "object": "list",\n' +
+      '        "data": [\n' +
+      '          {\n' +
+      '            "id": "il_1J2afrK8IdYREZycWFRn8yIU",\n' +
+      '            "object": "line_item",\n' +
+      '            "amount": 990,\n' +
+      '            "currency": "usd",\n' +
+      '            "description": "1 × Subscription (at $9.90 / month)",\n' +
+      '            "discount_amounts": [\n' +
+      '\n' +
+      '            ],\n' +
+      '            "discountable": true,\n' +
+      '            "discounts": [\n' +
+      '\n' +
+      '            ],\n' +
+      '            "livemode": false,\n' +
+      '            "metadata": {\n' +
+      '            },\n' +
+      '            "period": {\n' +
+      '              "end": 1626349399,\n' +
+      '              "start": 1623757399\n' +
+      '            },\n' +
+      '            "plan": {\n' +
+      '              "id": "price_1IvKlkK8IdYREZycIJ7sM6PA",\n' +
+      '              "object": "plan",\n' +
+      '              "active": true,\n' +
+      '              "aggregate_usage": null,\n' +
+      '              "amount": 990,\n' +
+      '              "amount_decimal": "990",\n' +
+      '              "billing_scheme": "per_unit",\n' +
+      '              "created": 1622027964,\n' +
+      '              "currency": "usd",\n' +
+      '              "interval": "month",\n' +
+      '              "interval_count": 1,\n' +
+      '              "livemode": false,\n' +
+      '              "metadata": {\n' +
+      '              },\n' +
+      '              "nickname": null,\n' +
+      '              "product": "prod_JYRfsjmFBiO2rP",\n' +
+      '              "tiers_mode": null,\n' +
+      '              "transform_usage": null,\n' +
+      '              "trial_period_days": null,\n' +
+      '              "usage_type": "licensed"\n' +
+      '            },\n' +
+      '            "price": {\n' +
+      '              "id": "price_1IvKlkK8IdYREZycIJ7sM6PA",\n' +
+      '              "object": "price",\n' +
+      '              "active": true,\n' +
+      '              "billing_scheme": "per_unit",\n' +
+      '              "created": 1622027964,\n' +
+      '              "currency": "usd",\n' +
+      '              "livemode": false,\n' +
+      '              "lookup_key": null,\n' +
+      '              "metadata": {\n' +
+      '              },\n' +
+      '              "nickname": null,\n' +
+      '              "product": "prod_JYRfsjmFBiO2rP",\n' +
+      '              "recurring": {\n' +
+      '                "aggregate_usage": null,\n' +
+      '                "interval": "month",\n' +
+      '                "interval_count": 1,\n' +
+      '                "trial_period_days": null,\n' +
+      '                "usage_type": "licensed"\n' +
+      '              },\n' +
+      '              "tiers_mode": null,\n' +
+      '              "transform_quantity": null,\n' +
+      '              "type": "recurring",\n' +
+      '              "unit_amount": 990,\n' +
+      '              "unit_amount_decimal": "990"\n' +
+      '            },\n' +
+      '            "proration": false,\n' +
+      '            "quantity": 1,\n' +
+      '            "subscription": "sub_JfwYeUpJjDNxG3",\n' +
+      '            "subscription_item": "si_JfwYqYQMExHtlZ",\n' +
+      '            "tax_amounts": [\n' +
+      '\n' +
+      '            ],\n' +
+      '            "tax_rates": [\n' +
+      '\n' +
+      '            ],\n' +
+      '            "type": "subscription"\n' +
+      '          }\n' +
+      '        ],\n' +
+      '        "has_more": false,\n' +
+      '        "total_count": 1,\n' +
+      '        "url": "/v1/invoices/in_1J2afrK8IdYREZycfAYIOkIq/lines"\n' +
+      '      },\n' +
+      '      "livemode": false,\n' +
+      '      "metadata": {\n' +
+      '      },\n' +
+      '      "next_payment_attempt": null,\n' +
+      '      "number": "1415EEEB-0001",\n' +
+      '      "on_behalf_of": null,\n' +
+      '      "paid": true,\n' +
+      '      "payment_intent": "pi_1J2afrK8IdYREZycJmVtKo3E",\n' +
+      '      "payment_settings": {\n' +
+      '        "payment_method_options": null,\n' +
+      '        "payment_method_types": null\n' +
+      '      },\n' +
+      '      "period_end": 1623757399,\n' +
+      '      "period_start": 1623757399,\n' +
+      '      "post_payment_credit_notes_amount": 0,\n' +
+      '      "pre_payment_credit_notes_amount": 0,\n' +
+      '      "receipt_number": null,\n' +
+      '      "starting_balance": 0,\n' +
+      '      "statement_descriptor": null,\n' +
+      '      "status": "paid",\n' +
+      '      "status_transitions": {\n' +
+      '        "finalized_at": 1623757399,\n' +
+      '        "marked_uncollectible_at": null,\n' +
+      '        "paid_at": 1623757400,\n' +
+      '        "voided_at": null\n' +
+      '      },\n' +
+      '      "subscription": "sub_JfwYeUpJjDNxG3",\n' +
+      '      "subtotal": 990,\n' +
+      '      "tax": null,\n' +
+      '      "total": 990,\n' +
+      '      "total_discount_amounts": [\n' +
+      '\n' +
+      '      ],\n' +
+      '      "total_tax_amounts": [\n' +
+      '\n' +
+      '      ],\n' +
+      '      "transfer_data": null,\n' +
+      '      "webhooks_delivered_at": null\n' +
+      '    },\n' +
+      '    "previous_attributes": {\n' +
+      '      "amount_paid": 0,\n' +
+      '      "amount_remaining": 990,\n' +
+      '      "attempt_count": 0,\n' +
+      '      "attempted": false,\n' +
+      '      "charge": null,\n' +
+      '      "paid": false,\n' +
+      '      "status": "open",\n' +
+      '      "status_transitions": {\n' +
+      '        "paid_at": null\n' +
+      '      }\n' +
+      '    }\n' +
+      '  },\n' +
+      '  "livemode": false,\n' +
+      '  "pending_webhooks": 1,\n' +
+      '  "request": {\n' +
+      '    "id": "req_vvAmpt1L6cTjuW",\n' +
+      '    "idempotency_key": null\n' +
+      '  },\n' +
+      '  "type": "invoice.updated"\n' +
+      '}'
   },
-  requestId: 'req_lWV2wysBKrcpCt',
-  statusCode: 400,
+  headers: undefined,
+  requestId: undefined,
+  statusCode: undefined,
   charge: undefined,
   decline_code: undefined,
   payment_intent: undefined,
@@ -64,3 +362,590 @@ StripeInvalidRequestError: Missing required param: cancel_url.
   setup_intent: undefined,
   source: undefined
 }
+TypeError: Cannot destructure property 'type' of 'event' as it is undefined.
+    at __webpack_exports__.default (webpack-internal:///./src/pages/api/webhooks.ts:37:7)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async apiResolver (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/api-utils.js:8:1)
+    at async DevServer.handleApiRequest (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/next-server.js:66:462)
+    at async Object.fn (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/next-server.js:58:580)
+    at async Router.execute (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/router.js:25:67)
+    at async DevServer.run (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/next-server.js:68:1042)
+    at async DevServer.handleRequest (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/next-server.js:32:504)
+StripeSignatureVerificationError: Timestamp outside the tolerance zone
+    at Object.verifyHeader (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/stripe/lib/Webhooks.js:132:13)
+    at Object.constructEvent (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/stripe/lib/Webhooks.js:12:20)
+    at __webpack_exports__.default (webpack-internal:///./src/pages/api/webhooks.ts:31:77)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async apiResolver (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/api-utils.js:8:1)
+    at async DevServer.handleApiRequest (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/next-server.js:66:462)
+    at async Object.fn (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/next-server.js:58:580)
+    at async Router.execute (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/router.js:25:67)
+    at async DevServer.run (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/next-server.js:68:1042)
+    at async DevServer.handleRequest (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/next-server.js:32:504) {
+  type: 'StripeSignatureVerificationError',
+  raw: {
+    message: 'Timestamp outside the tolerance zone',
+    detail: {
+      header: 't=1623757403,v1=96343568a95b68d052112345751423a7006fb0b1896f9801a3d3b1ec07a423f8,v0=f6ce02d89d82db2b1359ab5b1cd781839d9c966abacea95b2cb2b3f931b74dbe',
+      payload: '{\n' +
+        '  "id": "evt_1J2afuK8IdYREZycfUO0s6mG",\n' +
+        '  "object": "event",\n' +
+        '  "api_version": "2020-08-27",\n' +
+        '  "created": 1623757400,\n' +
+        '  "data": {\n' +
+        '    "object": {\n' +
+        '      "id": "pi_1J2afrK8IdYREZycJmVtKo3E",\n' +
+        '      "object": "payment_intent",\n' +
+        '      "amount": 990,\n' +
+        '      "amount_capturable": 0,\n' +
+        '      "amount_received": 990,\n' +
+        '      "application": null,\n' +
+        '      "application_fee_amount": null,\n' +
+        '      "canceled_at": null,\n' +
+        '      "cancellation_reason": null,\n' +
+        '      "capture_method": "automatic",\n' +
+        '      "charges": {\n' +
+        '        "object": "list",\n' +
+        '        "data": [\n' +
+        '          {\n' +
+        '            "id": "ch_1J2afsK8IdYREZyccFHaVdMJ",\n' +
+        '            "object": "charge",\n' +
+        '            "amount": 990,\n' +
+        '            "amount_captured": 990,\n' +
+        '            "amount_refunded": 0,\n' +
+        '            "application": null,\n' +
+        '            "application_fee": null,\n' +
+        '            "application_fee_amount": null,\n' +
+        '            "balance_transaction": "txn_1J2afsK8IdYREZycOXd7w0tn",\n' +
+        '            "billing_details": {\n' +
+        '              "address": {\n' +
+        '                "city": "Curitiba",\n' +
+        '                "country": "BR",\n' +
+        '                "line1": "Rua Alferes Poli, 271",\n' +
+        '                "line2": "Centro",\n' +
+        '                "postal_code": "80230-090",\n' +
+        '                "state": "PR"\n' +
+        '              },\n' +
+        '              "email": "ednachrisanto1955@gmail.com",\n' +
+        '              "name": "EDNA C DA SILVA",\n' +
+        '              "phone": null\n' +
+        '            },\n' +
+        '            "calculated_statement_descriptor": "Stripe",\n' +
+        '            "captured": true,\n' +
+        '            "created": 1623757400,\n' +
+        '            "currency": "usd",\n' +
+        '            "customer": "cus_JfwWXyhpdSpvJd",\n' +
+        '            "description": "Subscription creation",\n' +
+        '            "destination": null,\n' +
+        '            "dispute": null,\n' +
+        '            "disputed": false,\n' +
+        '            "failure_code": null,\n' +
+        '            "failure_message": null,\n' +
+        '            "fraud_details": {\n' +
+        '            },\n' +
+        '            "invoice": "in_1J2afrK8IdYREZycfAYIOkIq",\n' +
+        '            "livemode": false,\n' +
+        '            "metadata": {\n' +
+        '            },\n' +
+        '            "on_behalf_of": null,\n' +
+        '            "order": null,\n' +
+        '            "outcome": {\n' +
+        '              "network_status": "approved_by_network",\n' +
+        '              "reason": null,\n' +
+        '              "risk_level": "normal",\n' +
+        '              "risk_score": 14,\n' +
+        '              "seller_message": "Payment complete.",\n' +
+        '              "type": "authorized"\n' +
+        '            },\n' +
+        '            "paid": true,\n' +
+        '            "payment_intent": "pi_1J2afrK8IdYREZycJmVtKo3E",\n' +
+        '            "payment_method": "pm_1J2afqK8IdYREZycjKKQT32z",\n' +
+        '            "payment_method_details": {\n' +
+        '              "card": {\n' +
+        '                "brand": "visa",\n' +
+        '                "checks": {\n' +
+        '                  "address_line1_check": "pass",\n' +
+        '                  "address_postal_code_check": "pass",\n' +
+        '                  "cvc_check": "pass"\n' +
+        '                },\n' +
+        '                "country": "US",\n' +
+        '                "exp_month": 1,\n' +
+        '                "exp_year": 2023,\n' +
+        '                "fingerprint": "EP93QiOuTjThsOSV",\n' +
+        '                "funding": "credit",\n' +
+        '                "installments": null,\n' +
+        '                "last4": "4242",\n' +
+        '                "network": "visa",\n' +
+        '                "three_d_secure": null,\n' +
+        '                "wallet": null\n' +
+        '              },\n' +
+        '              "type": "card"\n' +
+        '            },\n' +
+        '            "receipt_email": null,\n' +
+        '            "receipt_number": null,\n' +
+        '            "receipt_url": "https://pay.stripe.com/receipts/acct_1IvKhwK8IdYREZyc/ch_1J2afsK8IdYREZyccFHaVdMJ/rcpt_JfwZP06Jo0dEF4u3pokoQIjzwogDJw1",\n' +
+        '            "refunded": false,\n' +
+        '            "refunds": {\n' +
+        '              "object": "list",\n' +
+        '              "data": [\n' +
+        '\n' +
+        '              ],\n' +
+        '              "has_more": false,\n' +
+        '              "total_count": 0,\n' +
+        '              "url": "/v1/charges/ch_1J2afsK8IdYREZyccFHaVdMJ/refunds"\n' +
+        '            },\n' +
+        '            "review": null,\n' +
+        '            "shipping": null,\n' +
+        '            "source": null,\n' +
+        '            "source_transfer": null,\n' +
+        '            "statement_descriptor": null,\n' +
+        '            "statement_descriptor_suffix": null,\n' +
+        '            "status": "succeeded",\n' +
+        '            "transfer_data": null,\n' +
+        '            "transfer_group": null\n' +
+        '          }\n' +
+        '        ],\n' +
+        '        "has_more": false,\n' +
+        '        "total_count": 1,\n' +
+        '        "url": "/v1/charges?payment_intent=pi_1J2afrK8IdYREZycJmVtKo3E"\n' +
+        '      },\n' +
+        '      "client_secret": "pi_1J2afrK8IdYREZycJmVtKo3E_secret_93qnda0aiAKPdpwbtvBovfQyA",\n' +
+        '      "confirmation_method": "automatic",\n' +
+        '      "created": 1623757399,\n' +
+        '      "currency": "usd",\n' +
+        '      "customer": "cus_JfwWXyhpdSpvJd",\n' +
+        '      "description": "Subscription creation",\n' +
+        '      "invoice": "in_1J2afrK8IdYREZycfAYIOkIq",\n' +
+        '      "last_payment_error": null,\n' +
+        '      "livemode": false,\n' +
+        '      "metadata": {\n' +
+        '      },\n' +
+        '      "next_action": null,\n' +
+        '      "on_behalf_of": null,\n' +
+        '      "payment_method": "pm_1J2afqK8IdYREZycjKKQT32z",\n' +
+        '      "payment_method_options": {\n' +
+        '        "card": {\n' +
+        '          "installments": null,\n' +
+        '          "network": null,\n' +
+        '          "request_three_d_secure": "automatic"\n' +
+        '        }\n' +
+        '      },\n' +
+        '      "payment_method_types": [\n' +
+        '        "card"\n' +
+        '      ],\n' +
+        '      "receipt_email": null,\n' +
+        '      "review": null,\n' +
+        '      "setup_future_usage": "off_session",\n' +
+        '      "shipping": null,\n' +
+        '      "source": null,\n' +
+        '      "statement_descriptor": null,\n' +
+        '      "statement_descriptor_suffix": null,\n' +
+        '      "status": "succeeded",\n' +
+        '      "transfer_data": null,\n' +
+        '      "transfer_group": null\n' +
+        '    }\n' +
+        '  },\n' +
+        '  "livemode": false,\n' +
+        '  "pending_webhooks": 1,\n' +
+        '  "request": {\n' +
+        '    "id": "req_vvAmpt1L6cTjuW",\n' +
+        '    "idempotency_key": null\n' +
+        '  },\n' +
+        '  "type": "payment_intent.succeeded"\n' +
+        '}'
+    }
+  },
+  rawType: undefined,
+  code: undefined,
+  doc_url: undefined,
+  param: undefined,
+  detail: {
+    header: 't=1623757403,v1=96343568a95b68d052112345751423a7006fb0b1896f9801a3d3b1ec07a423f8,v0=f6ce02d89d82db2b1359ab5b1cd781839d9c966abacea95b2cb2b3f931b74dbe',
+    payload: '{\n' +
+      '  "id": "evt_1J2afuK8IdYREZycfUO0s6mG",\n' +
+      '  "object": "event",\n' +
+      '  "api_version": "2020-08-27",\n' +
+      '  "created": 1623757400,\n' +
+      '  "data": {\n' +
+      '    "object": {\n' +
+      '      "id": "pi_1J2afrK8IdYREZycJmVtKo3E",\n' +
+      '      "object": "payment_intent",\n' +
+      '      "amount": 990,\n' +
+      '      "amount_capturable": 0,\n' +
+      '      "amount_received": 990,\n' +
+      '      "application": null,\n' +
+      '      "application_fee_amount": null,\n' +
+      '      "canceled_at": null,\n' +
+      '      "cancellation_reason": null,\n' +
+      '      "capture_method": "automatic",\n' +
+      '      "charges": {\n' +
+      '        "object": "list",\n' +
+      '        "data": [\n' +
+      '          {\n' +
+      '            "id": "ch_1J2afsK8IdYREZyccFHaVdMJ",\n' +
+      '            "object": "charge",\n' +
+      '            "amount": 990,\n' +
+      '            "amount_captured": 990,\n' +
+      '            "amount_refunded": 0,\n' +
+      '            "application": null,\n' +
+      '            "application_fee": null,\n' +
+      '            "application_fee_amount": null,\n' +
+      '            "balance_transaction": "txn_1J2afsK8IdYREZycOXd7w0tn",\n' +
+      '            "billing_details": {\n' +
+      '              "address": {\n' +
+      '                "city": "Curitiba",\n' +
+      '                "country": "BR",\n' +
+      '                "line1": "Rua Alferes Poli, 271",\n' +
+      '                "line2": "Centro",\n' +
+      '                "postal_code": "80230-090",\n' +
+      '                "state": "PR"\n' +
+      '              },\n' +
+      '              "email": "ednachrisanto1955@gmail.com",\n' +
+      '              "name": "EDNA C DA SILVA",\n' +
+      '              "phone": null\n' +
+      '            },\n' +
+      '            "calculated_statement_descriptor": "Stripe",\n' +
+      '            "captured": true,\n' +
+      '            "created": 1623757400,\n' +
+      '            "currency": "usd",\n' +
+      '            "customer": "cus_JfwWXyhpdSpvJd",\n' +
+      '            "description": "Subscription creation",\n' +
+      '            "destination": null,\n' +
+      '            "dispute": null,\n' +
+      '            "disputed": false,\n' +
+      '            "failure_code": null,\n' +
+      '            "failure_message": null,\n' +
+      '            "fraud_details": {\n' +
+      '            },\n' +
+      '            "invoice": "in_1J2afrK8IdYREZycfAYIOkIq",\n' +
+      '            "livemode": false,\n' +
+      '            "metadata": {\n' +
+      '            },\n' +
+      '            "on_behalf_of": null,\n' +
+      '            "order": null,\n' +
+      '            "outcome": {\n' +
+      '              "network_status": "approved_by_network",\n' +
+      '              "reason": null,\n' +
+      '              "risk_level": "normal",\n' +
+      '              "risk_score": 14,\n' +
+      '              "seller_message": "Payment complete.",\n' +
+      '              "type": "authorized"\n' +
+      '            },\n' +
+      '            "paid": true,\n' +
+      '            "payment_intent": "pi_1J2afrK8IdYREZycJmVtKo3E",\n' +
+      '            "payment_method": "pm_1J2afqK8IdYREZycjKKQT32z",\n' +
+      '            "payment_method_details": {\n' +
+      '              "card": {\n' +
+      '                "brand": "visa",\n' +
+      '                "checks": {\n' +
+      '                  "address_line1_check": "pass",\n' +
+      '                  "address_postal_code_check": "pass",\n' +
+      '                  "cvc_check": "pass"\n' +
+      '                },\n' +
+      '                "country": "US",\n' +
+      '                "exp_month": 1,\n' +
+      '                "exp_year": 2023,\n' +
+      '                "fingerprint": "EP93QiOuTjThsOSV",\n' +
+      '                "funding": "credit",\n' +
+      '                "installments": null,\n' +
+      '                "last4": "4242",\n' +
+      '                "network": "visa",\n' +
+      '                "three_d_secure": null,\n' +
+      '                "wallet": null\n' +
+      '              },\n' +
+      '              "type": "card"\n' +
+      '            },\n' +
+      '            "receipt_email": null,\n' +
+      '            "receipt_number": null,\n' +
+      '            "receipt_url": "https://pay.stripe.com/receipts/acct_1IvKhwK8IdYREZyc/ch_1J2afsK8IdYREZyccFHaVdMJ/rcpt_JfwZP06Jo0dEF4u3pokoQIjzwogDJw1",\n' +
+      '            "refunded": false,\n' +
+      '            "refunds": {\n' +
+      '              "object": "list",\n' +
+      '              "data": [\n' +
+      '\n' +
+      '              ],\n' +
+      '              "has_more": false,\n' +
+      '              "total_count": 0,\n' +
+      '              "url": "/v1/charges/ch_1J2afsK8IdYREZyccFHaVdMJ/refunds"\n' +
+      '            },\n' +
+      '            "review": null,\n' +
+      '            "shipping": null,\n' +
+      '            "source": null,\n' +
+      '            "source_transfer": null,\n' +
+      '            "statement_descriptor": null,\n' +
+      '            "statement_descriptor_suffix": null,\n' +
+      '            "status": "succeeded",\n' +
+      '            "transfer_data": null,\n' +
+      '            "transfer_group": null\n' +
+      '          }\n' +
+      '        ],\n' +
+      '        "has_more": false,\n' +
+      '        "total_count": 1,\n' +
+      '        "url": "/v1/charges?payment_intent=pi_1J2afrK8IdYREZycJmVtKo3E"\n' +
+      '      },\n' +
+      '      "client_secret": "pi_1J2afrK8IdYREZycJmVtKo3E_secret_93qnda0aiAKPdpwbtvBovfQyA",\n' +
+      '      "confirmation_method": "automatic",\n' +
+      '      "created": 1623757399,\n' +
+      '      "currency": "usd",\n' +
+      '      "customer": "cus_JfwWXyhpdSpvJd",\n' +
+      '      "description": "Subscription creation",\n' +
+      '      "invoice": "in_1J2afrK8IdYREZycfAYIOkIq",\n' +
+      '      "last_payment_error": null,\n' +
+      '      "livemode": false,\n' +
+      '      "metadata": {\n' +
+      '      },\n' +
+      '      "next_action": null,\n' +
+      '      "on_behalf_of": null,\n' +
+      '      "payment_method": "pm_1J2afqK8IdYREZycjKKQT32z",\n' +
+      '      "payment_method_options": {\n' +
+      '        "card": {\n' +
+      '          "installments": null,\n' +
+      '          "network": null,\n' +
+      '          "request_three_d_secure": "automatic"\n' +
+      '        }\n' +
+      '      },\n' +
+      '      "payment_method_types": [\n' +
+      '        "card"\n' +
+      '      ],\n' +
+      '      "receipt_email": null,\n' +
+      '      "review": null,\n' +
+      '      "setup_future_usage": "off_session",\n' +
+      '      "shipping": null,\n' +
+      '      "source": null,\n' +
+      '      "statement_descriptor": null,\n' +
+      '      "statement_descriptor_suffix": null,\n' +
+      '      "status": "succeeded",\n' +
+      '      "transfer_data": null,\n' +
+      '      "transfer_group": null\n' +
+      '    }\n' +
+      '  },\n' +
+      '  "livemode": false,\n' +
+      '  "pending_webhooks": 1,\n' +
+      '  "request": {\n' +
+      '    "id": "req_vvAmpt1L6cTjuW",\n' +
+      '    "idempotency_key": null\n' +
+      '  },\n' +
+      '  "type": "payment_intent.succeeded"\n' +
+      '}'
+  },
+  headers: undefined,
+  requestId: undefined,
+  statusCode: undefined,
+  charge: undefined,
+  decline_code: undefined,
+  payment_intent: undefined,
+  payment_method: undefined,
+  payment_method_type: undefined,
+  setup_intent: undefined,
+  source: undefined
+}
+TypeError: Cannot destructure property 'type' of 'event' as it is undefined.
+    at __webpack_exports__.default (webpack-internal:///./src/pages/api/webhooks.ts:37:7)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async apiResolver (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/api-utils.js:8:1)
+    at async DevServer.handleApiRequest (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/next-server.js:66:462)
+    at async Object.fn (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/next-server.js:58:580)
+    at async Router.execute (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/router.js:25:67)
+    at async DevServer.run (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/next-server.js:68:1042)
+    at async DevServer.handleRequest (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/next-server.js:32:504)
+StripeSignatureVerificationError: Timestamp outside the tolerance zone
+    at Object.verifyHeader (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/stripe/lib/Webhooks.js:132:13)
+    at Object.constructEvent (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/stripe/lib/Webhooks.js:12:20)
+    at __webpack_exports__.default (webpack-internal:///./src/pages/api/webhooks.ts:31:77)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async apiResolver (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/api-utils.js:8:1)
+    at async DevServer.handleApiRequest (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/next-server.js:66:462)
+    at async Object.fn (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/next-server.js:58:580)
+    at async Router.execute (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/router.js:25:67)
+    at async DevServer.run (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/next-server.js:68:1042)
+    at async DevServer.handleRequest (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/next-server.js:32:504) {
+  type: 'StripeSignatureVerificationError',
+  raw: {
+    message: 'Timestamp outside the tolerance zone',
+    detail: {
+      header: 't=1623757403,v1=e3ee1f9e86caedd4b922f1d593ccfe827135c5b6525dd2044c0713a4d2efd045,v0=7d7717ed723bda12ea33cedf6556fb0cc90dbd3dbb894d92bfb3a7b66c9d17ff',
+      payload: '{\n' +
+        '  "id": "evt_1J2afuK8IdYREZyc5ogIKkJU",\n' +
+        '  "object": "event",\n' +
+        '  "api_version": "2020-08-27",\n' +
+        '  "created": 1623757399,\n' +
+        '  "data": {\n' +
+        '    "object": {\n' +
+        '      "id": "pi_1J2afrK8IdYREZycJmVtKo3E",\n' +
+        '      "object": "payment_intent",\n' +
+        '      "amount": 990,\n' +
+        '      "amount_capturable": 0,\n' +
+        '      "amount_received": 0,\n' +
+        '      "application": null,\n' +
+        '      "application_fee_amount": null,\n' +
+        '      "canceled_at": null,\n' +
+        '      "cancellation_reason": null,\n' +
+        '      "capture_method": "automatic",\n' +
+        '      "charges": {\n' +
+        '        "object": "list",\n' +
+        '        "data": [\n' +
+        '\n' +
+        '        ],\n' +
+        '        "has_more": false,\n' +
+        '        "total_count": 0,\n' +
+        '        "url": "/v1/charges?payment_intent=pi_1J2afrK8IdYREZycJmVtKo3E"\n' +
+        '      },\n' +
+        '      "client_secret": "pi_1J2afrK8IdYREZycJmVtKo3E_secret_93qnda0aiAKPdpwbtvBovfQyA",\n' +
+        '      "confirmation_method": "automatic",\n' +
+        '      "created": 1623757399,\n' +
+        '      "currency": "usd",\n' +
+        '      "customer": "cus_JfwWXyhpdSpvJd",\n' +
+        '      "description": "Subscription creation",\n' +
+        '      "invoice": "in_1J2afrK8IdYREZycfAYIOkIq",\n' +
+        '      "last_payment_error": null,\n' +
+        '      "livemode": false,\n' +
+        '      "metadata": {\n' +
+        '      },\n' +
+        '      "next_action": null,\n' +
+        '      "on_behalf_of": null,\n' +
+        '      "payment_method": null,\n' +
+        '      "payment_method_options": {\n' +
+        '        "card": {\n' +
+        '          "installments": null,\n' +
+        '          "network": null,\n' +
+        '          "request_three_d_secure": "automatic"\n' +
+        '        }\n' +
+        '      },\n' +
+        '      "payment_method_types": [\n' +
+        '        "card"\n' +
+        '      ],\n' +
+        '      "receipt_email": null,\n' +
+        '      "review": null,\n' +
+        '      "setup_future_usage": null,\n' +
+        '      "shipping": null,\n' +
+        '      "source": null,\n' +
+        '      "statement_descriptor": null,\n' +
+        '      "statement_descriptor_suffix": null,\n' +
+        '      "status": "requires_payment_method",\n' +
+        '      "transfer_data": null,\n' +
+        '      "transfer_group": null\n' +
+        '    }\n' +
+        '  },\n' +
+        '  "livemode": false,\n' +
+        '  "pending_webhooks": 1,\n' +
+        '  "request": {\n' +
+        '    "id": "req_vvAmpt1L6cTjuW",\n' +
+        '    "idempotency_key": null\n' +
+        '  },\n' +
+        '  "type": "payment_intent.created"\n' +
+        '}'
+    }
+  },
+  rawType: undefined,
+  code: undefined,
+  doc_url: undefined,
+  param: undefined,
+  detail: {
+    header: 't=1623757403,v1=e3ee1f9e86caedd4b922f1d593ccfe827135c5b6525dd2044c0713a4d2efd045,v0=7d7717ed723bda12ea33cedf6556fb0cc90dbd3dbb894d92bfb3a7b66c9d17ff',
+    payload: '{\n' +
+      '  "id": "evt_1J2afuK8IdYREZyc5ogIKkJU",\n' +
+      '  "object": "event",\n' +
+      '  "api_version": "2020-08-27",\n' +
+      '  "created": 1623757399,\n' +
+      '  "data": {\n' +
+      '    "object": {\n' +
+      '      "id": "pi_1J2afrK8IdYREZycJmVtKo3E",\n' +
+      '      "object": "payment_intent",\n' +
+      '      "amount": 990,\n' +
+      '      "amount_capturable": 0,\n' +
+      '      "amount_received": 0,\n' +
+      '      "application": null,\n' +
+      '      "application_fee_amount": null,\n' +
+      '      "canceled_at": null,\n' +
+      '      "cancellation_reason": null,\n' +
+      '      "capture_method": "automatic",\n' +
+      '      "charges": {\n' +
+      '        "object": "list",\n' +
+      '        "data": [\n' +
+      '\n' +
+      '        ],\n' +
+      '        "has_more": false,\n' +
+      '        "total_count": 0,\n' +
+      '        "url": "/v1/charges?payment_intent=pi_1J2afrK8IdYREZycJmVtKo3E"\n' +
+      '      },\n' +
+      '      "client_secret": "pi_1J2afrK8IdYREZycJmVtKo3E_secret_93qnda0aiAKPdpwbtvBovfQyA",\n' +
+      '      "confirmation_method": "automatic",\n' +
+      '      "created": 1623757399,\n' +
+      '      "currency": "usd",\n' +
+      '      "customer": "cus_JfwWXyhpdSpvJd",\n' +
+      '      "description": "Subscription creation",\n' +
+      '      "invoice": "in_1J2afrK8IdYREZycfAYIOkIq",\n' +
+      '      "last_payment_error": null,\n' +
+      '      "livemode": false,\n' +
+      '      "metadata": {\n' +
+      '      },\n' +
+      '      "next_action": null,\n' +
+      '      "on_behalf_of": null,\n' +
+      '      "payment_method": null,\n' +
+      '      "payment_method_options": {\n' +
+      '        "card": {\n' +
+      '          "installments": null,\n' +
+      '          "network": null,\n' +
+      '          "request_three_d_secure": "automatic"\n' +
+      '        }\n' +
+      '      },\n' +
+      '      "payment_method_types": [\n' +
+      '        "card"\n' +
+      '      ],\n' +
+      '      "receipt_email": null,\n' +
+      '      "review": null,\n' +
+      '      "setup_future_usage": null,\n' +
+      '      "shipping": null,\n' +
+      '      "source": null,\n' +
+      '      "statement_descriptor": null,\n' +
+      '      "statement_descriptor_suffix": null,\n' +
+      '      "status": "requires_payment_method",\n' +
+      '      "transfer_data": null,\n' +
+      '      "transfer_group": null\n' +
+      '    }\n' +
+      '  },\n' +
+      '  "livemode": false,\n' +
+      '  "pending_webhooks": 1,\n' +
+      '  "request": {\n' +
+      '    "id": "req_vvAmpt1L6cTjuW",\n' +
+      '    "idempotency_key": null\n' +
+      '  },\n' +
+      '  "type": "payment_intent.created"\n' +
+      '}'
+  },
+  headers: undefined,
+  requestId: undefined,
+  statusCode: undefined,
+  charge: undefined,
+  decline_code: undefined,
+  payment_intent: undefined,
+  payment_method: undefined,
+  payment_method_type: undefined,
+  setup_intent: undefined,
+  source: undefined
+}
+TypeError: Cannot destructure property 'type' of 'event' as it is undefined.
+    at __webpack_exports__.default (webpack-internal:///./src/pages/api/webhooks.ts:37:7)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async apiResolver (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/api-utils.js:8:1)
+    at async DevServer.handleApiRequest (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/next-server.js:66:462)
+    at async Object.fn (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/next-server.js:58:580)
+    at async Router.execute (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/router.js:25:67)
+    at async DevServer.run (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/next-server.js:68:1042)
+    at async DevServer.handleRequest (/opt/lampp/htdocs/ignite-aulas/reactjs/ignews/node_modules/next/dist/next-server/server/next-server.js:32:504)
+event - build page: /next/dist/pages/_error
+wait  - compiling...
+event - compiled successfully
+event - build page: /api/auth/[...nextauth]
+wait  - compiling...
+event - compiled successfully
+wait  - compiling...
+event - compiled successfully
+event - build page: /next/dist/pages/_error
+wait  - compiling...
+event - compiled successfully
+wait  - compiling...
+event - compiled successfully
+event - build page: /next/dist/pages/_error
+wait  - compiling...
+event - compiled successfully
